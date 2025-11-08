@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>MA'HAD TUHFATUNNISA - Berbasis Adab Islami Khusus Putri</title>
+    <meta name="description"
+        content="Membentuk Muslimah Beriman dan BerAkhlaqul Karimah, Mandiri, Cakap dan Terampil, serta Memiliki Kepedulian dan Sensitifitas Sosial Yang Tinggi.">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
+
+<body>
+    <header class="site-header container">
+        <div class="brand">
+            <div class="logo">TN</div>
+            <div class="brand-text">
+                <div class="brand-name">MA'HAD TUHFATUNNISA</div>
+                <div class="brand-sub">Berbasis Adab Islami Khusus Putri</div>
+            </div>
+        </div>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#tentang">Tentang</a></li>
+                <li><a href="#program">Program</a></li>
+                <li><a href="#galeri">Galeri</a></li>
+                <li><a href="#testi">Testimoni</a></li>
+            </ul>
+        </nav>
+
+        <div class="nav-actions">
+            <a class="btn btn-outline" href="http://13.214.127.23/login" target="_blank" rel="noopener">Login
+                SISTUNIS</a>
+            <a class="btn btn-cta" href="#daftar">Daftar</a>
+        </div>
+    </header>
+
+    <main id="main" class="container">
+        <div id="hero"></div>
+        <div id="tentang"></div>
+        <div id="program"></div>
+        <div id="keunggulan"></div>
+        <div id="galeri"></div>
+        <div id="testi"></div>
+        <div id="daftar"></div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script>
+        // Simple loader for partials (sections)
+        const sections = [
+            { id: 'hero', file: 'sections/hero.html' },
+            { id: 'tentang', file: 'sections/tentang.html' },
+            { id: 'program', file: 'sections/program.html' },
+            { id: 'keunggulan', file: 'sections/keunggulan.html' },
+            { id: 'galeri', file: 'sections/galeri.html' },
+            { id: 'testi', file: 'sections/testimoni.html' },
+            { id: 'daftar', file: 'sections/daftar.html' },
+            { id: 'footer', file: 'sections/footer.html' }
+        ];
+
+        async function loadSection(id, file) {
+            try {
+                const res = await fetch(file);
+                if (!res.ok) throw new Error(res.statusText);
+                const html = await res.text();
+                const target = document.getElementById(id);
+                if (target) target.innerHTML = html;
+            } catch (e) {
+                console.warn('Failed load', file, e);
+            }
+        }
+
+        sections.forEach(s => loadSection(s.id, s.file));
+
+        // Smooth scroll for anchor links
+        document.addEventListener('click', (e) => {
+            const a = e.target.closest('a[href^="#"]');
+            if (!a) return;
+            e.preventDefault();
+            const id = a.getAttribute('href').slice(1);
+            const el = document.getElementById(id);
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,664 @@
+:root {
+    --rose: #F7D7E0;
+    --dusty: #EAAFC8;
+    --gold: #C7A17A;
+    --cream: #FFF7F5;
+    --muted: #6B6B6B;
+    --dark: #2b2b2b;
+    --white: #fff;
+    --radius: 12px;
+    --max: 1100px
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', system-ui, Segoe UI, Roboto, Arial;
+    color: var(--muted);
+    background: linear-gradient(180deg, var(--cream), #fff);
+    -webkit-font-smoothing: antialiased
+}
+
+.container {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 20px
+}
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px
+}
+
+.logo {
+    width: 56px;
+    height: 56px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--dusty), var(--rose));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-weight: 700;
+    font-family: 'Playfair Display';
+    font-size: 16px
+}
+
+.brand-name {
+    font-weight: 700
+}
+
+.brand-sub {
+    font-size: 12px;
+    color: var(--muted)
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 16px;
+    list-style: none;
+    margin: 0;
+    padding: 0
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 600
+}
+
+.nav-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center
+}
+
+.btn {
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none
+}
+
+.btn-cta {
+    background: var(--dusty);
+    color: var(--white)
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid rgba(107, 107, 107, 0.12);
+    color: var(--dark)
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 28px;
+    align-items: center;
+    padding: 48px 0
+}
+
+.eyebrow {
+    display: inline-block;
+    background: var(--gold);
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 13px;
+    margin-bottom: 12px
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 44px;
+    margin: 0;
+    color: var(--dark);
+    line-height: 1.06
+}
+
+.lead {
+    margin: 18px 0 22px;
+    color: #4b4b4b;
+    max-width: 60ch
+}
+
+.illus-card {
+    background: linear-gradient(180deg, var(--rose), #fff);
+    border-radius: 18px;
+    padding: 36px;
+    height: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 18px 40px rgba(200, 130, 150, 0.08);
+    overflow: hidden
+}
+
+.section-about .content {
+    max-width: 900px
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px
+}
+
+.prog {
+    background: var(--white);
+    padding: 18px;
+    border-radius: 14px;
+    box-shadow: 0 10px 24px rgba(200, 140, 150, 0.04);
+    text-align: left
+}
+
+.section-features ul {
+    max-width: 760px
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px
+}
+
+.gallery .thumb {
+    height: 120px;
+    background: #f6e7e9;
+    border-radius: 10px
+}
+
+.testi-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px
+}
+
+.strip {
+    background: linear-gradient(90deg, var(--dusty), var(--rose));
+    color: #fff;
+    padding: 22px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px
+}
+
+.site-footer {
+    padding: 22px 0;
+    border-top: 1px solid #f3e7e9;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px
+}
+
+@media (max-width:1000px) {
+    .hero {
+        grid-template-columns: 1fr 320px
+    }
+
+    .program-grid {
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr)
+    }
+}
+
+@media (max-width:720px) {
+    .main-nav ul {
+        display: none
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        text-align: left
+    }
+
+    .illus-card {
+        height: 260px
+    }
+
+    h1 {
+        font-size: 34px
+    }
+
+    .program-grid {
+        grid-template-columns: 1fr
+    }
+
+    .testi-grid {
+        grid-template-columns: 1fr
+    }
+}
+
+@media (max-width:420px) {
+    h1 {
+        font-size: 28px
+    }
+
+    .illus-card {
+        padding: 22px
+    }
+
+    .hero {
+        padding: 34px 0
+    }
+}
+
+/* Make header height predictable */
+.site-header {
+    height: 80px;
+    align-items: center;
+    padding: 12px 0
+}
+
+/* Ensure hero stays visually balanced */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 32px;
+    align-items: center;
+    /* vertical center both columns */
+    min-height: calc(100vh - 80px);
+    /* full-screen hero minus header */
+    padding: 56px 0;
+}
+
+/* Constrain left column so title doesn't overflow */
+.hero-left {
+    max-width: 720px
+}
+
+/* Make hero-right responsive & not push layout around */
+.hero-right,
+.illus-card {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Keep SVG / illustration contained */
+.illus-card svg {
+    width: 100%;
+    height: auto;
+    max-height: 360px;
+    object-fit: cover;
+    display: block
+}
+
+/* Buttons: consistent baseline and no wrap jump */
+.hero-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap
+}
+
+.hero-actions .btn {
+    white-space: nowrap
+}
+
+/* Small visual tweak: give title breathing room */
+h1 {
+    margin-top: 6px;
+    margin-bottom: 14px
+}
+
+/* For anchor scrolling: prevent header overlap */
+[id] {
+    scroll-margin-top: 110px
+}
+
+/* MOBILE TWEAKS: keep hero stacked nicely */
+@media (max-width:1000px) {
+    .hero {
+        grid-template-columns: 1fr 320px;
+        min-height: calc(80vh - 80px)
+    }
+
+    .illus-card {
+        max-width: 320px;
+        height: 260px
+    }
+}
+
+@media (max-width:720px) {
+    .site-header {
+        height: auto;
+        padding: 12px
+    }
+
+    .main-nav ul {
+        display: none
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 40px 0;
+        min-height: auto
+    }
+
+    .illus-card {
+        height: 220px;
+        max-width: 100%
+    }
+
+    .hero-left {
+        max-width: 100%
+    }
+
+    .hero-actions {
+        flex-direction: row
+    }
+
+    h1 {
+        font-size: 32px
+    }
+}
+
+/* ===== Hero layout fixes (paste near the end of main.css) ===== */
+
+/* Make header height predictable */
+.site-header {
+    height: 80px;
+    align-items: center;
+    padding: 12px 0
+}
+
+/* Ensure hero stays visually balanced */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 32px;
+    align-items: center;
+    /* vertical center both columns */
+    min-height: calc(100vh - 80px);
+    /* full-screen hero minus header */
+    padding: 56px 0;
+}
+
+/* Constrain left column so title doesn't overflow */
+.hero-left {
+    max-width: 720px
+}
+
+/* Make hero-right responsive & not push layout around */
+.hero-right,
+.illus-card {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Keep SVG / illustration contained */
+.illus-card svg {
+    width: 100%;
+    height: auto;
+    max-height: 360px;
+    object-fit: cover;
+    display: block
+}
+
+/* Buttons: consistent baseline and no wrap jump */
+.hero-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap
+}
+
+.hero-actions .btn {
+    white-space: nowrap
+}
+
+/* Small visual tweak: give title breathing room */
+h1 {
+    margin-top: 6px;
+    margin-bottom: 14px
+}
+
+/* For anchor scrolling: prevent header overlap */
+[id] {
+    scroll-margin-top: 110px
+}
+
+/* MOBILE TWEAKS: keep hero stacked nicely */
+@media (max-width:1000px) {
+    .hero {
+        grid-template-columns: 1fr 320px;
+        min-height: calc(80vh - 80px)
+    }
+
+    .illus-card {
+        max-width: 320px;
+        height: 260px
+    }
+}
+
+@media (max-width:720px) {
+    .site-header {
+        height: auto;
+        padding: 12px
+    }
+
+    .main-nav ul {
+        display: none
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 40px 0;
+        min-height: auto
+    }
+
+    .illus-card {
+        height: 220px;
+        max-width: 100%
+    }
+
+    .hero-left {
+        max-width: 100%
+    }
+
+    .hero-actions {
+        flex-direction: row
+    }
+
+    h1 {
+        font-size: 32px
+    }
+}
+
+/* ========== Tuhfatunnisa Beige Caramel Theme (append this) ========== */
+/* Color tokens (Beige / Caramel theme) */
+:root {
+    --base-bg: #FFF7EF;
+    /* very light cream page bg */
+    --accent-bg: #F0E3D4;
+    /* soft panel / subtle surfaces */
+    --primary: #C9A676;
+    /* caramel gold - primary CTA */
+    --accent: #E7C8A1;
+    /* warm beige - secondary accents */
+    --muted: #6E5D4E;
+    /* muted text */
+    --text-main: #3B3024;
+    /* main text (dark cocoa) */
+    --white: #ffffff;
+    --card-shadow: rgba(59, 48, 36, 0.06);
+    --radius-lg: 16px;
+    --radius-sm: 10px;
+}
+
+/* Page background & base text */
+body {
+    background: linear-gradient(180deg, var(--base-bg), #fff);
+    color: var(--text-main);
+}
+
+/* Logo / brand */
+.logo {
+    background: linear-gradient(135deg, var(--accent), var(--primary));
+    box-shadow: 0 10px 30px var(--card-shadow);
+}
+
+/* Eyebrow, chips */
+.eyebrow {
+    background: var(--primary);
+    color: var(--white);
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-weight: 600;
+}
+
+/* Buttons */
+.btn-cta {
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    box-shadow: 0 10px 24px rgba(201, 166, 118, 0.14);
+    transition: transform .15s ease, box-shadow .15s ease, opacity .12s ease;
+    border-radius: 12px;
+}
+
+.btn-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 36px rgba(201, 166, 118, 0.18);
+    opacity: .98;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid rgba(59, 48, 36, 0.08);
+    color: var(--text-main);
+    transition: border-color .12s ease, color .12s ease;
+}
+
+.btn-outline:hover {
+    border-color: rgba(59, 48, 36, 0.18);
+    color: var(--text-main);
+}
+
+/* Hero adjustments that follow the new tone */
+.hero {
+    background: linear-gradient(180deg, rgba(231, 200, 161, 0.06), transparent 60%);
+    border-radius: var(--radius-lg);
+    padding: 56px;
+}
+
+.illus-card {
+    background: linear-gradient(180deg, var(--accent-bg), #fff);
+    border-radius: 16px;
+    box-shadow: 0 18px 40px rgba(59, 48, 36, 0.04);
+}
+
+/* Card / program / testimoni look */
+.prog,
+.testi,
+.thumb {
+    background: var(--white);
+    border-radius: var(--radius-sm);
+    box-shadow: 0 12px 30px var(--card-shadow);
+}
+
+/* CTA strip */
+.strip {
+    background: linear-gradient(90deg, rgba(201, 166, 118, 0.12), rgba(231, 200, 161, 0.06));
+    color: var(--text-main);
+}
+
+/* Footer */
+.site-footer {
+    background: transparent;
+    color: var(--muted);
+}
+
+/* Links */
+a {
+    color: var(--text-main);
+}
+
+a:hover {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+/* Small UI polish */
+h1 {
+    color: var(--text-main);
+}
+
+h3,
+h4 {
+    color: #453a31;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Accessibility: focus outline */
+a:focus,
+button:focus {
+    outline: 3px solid rgba(201, 166, 118, 0.18);
+    outline-offset: 3px;
+}
+
+/* Mobile tweaks keep as before but keep palette */
+@media (max-width:720px) {
+    .hero {
+        padding: 36px 18px;
+        border-radius: 12px;
+    }
+
+    .illus-card {
+        height: 220px;
+    }
+}
+
+/* ========== Optional: tiny fade-in for sections ========== */
+.section-fade {
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity .45s ease, transform .45s ease;
+}
+
+.section-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Auto-add .section-visible when sections loaded (small JS helper) */
